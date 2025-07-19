@@ -67,4 +67,22 @@ public class AssignmentOne {
         System.out.println("--------------------------------");
     }
     
+    //Method to cancel a booking by mobile number
+    public static void cancelBooking(ArrayList<Appointment> appointments, String mobilePhone) {
+        boolean found = false;
+
+        for (int i = 0; i < appointments.size(); i++) {
+            Appointment app = appointments.get(i);
+            if (app.phoneNum.equals(mobilePhone)) {
+                appointments.remove(i);  // remove by index
+                System.out.println("Appointment with mobile " + mobilePhone + " has been cancelled.");
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("No appointment found with mobile: " + mobilePhone);
+        }
+    }
 }
