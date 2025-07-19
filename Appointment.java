@@ -17,5 +17,17 @@ public class Appointment {
         this.healthProfessional = doctor;
     }
 
-    
+    public void printAppointmentDetails() {
+        System.out.println("Appointment Details:");
+        System.out.println("Patient Name: " + pName);
+        System.out.println("Mobile Phone: " + phoneNum);
+        System.out.println("Preferred Time Slot: " + timeSlot);
+
+        if (healthProfessional != null) {
+            System.out.println("Doctor Assigned:");
+            healthProfessional.printDetails();
+        } else {
+            System.out.println("Doctor Assigned: Not yet assigned.");
+        }
+    }
 }
