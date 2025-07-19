@@ -13,7 +13,7 @@ public class GeneralPractitioner extends HealthProfessional{
     
     }
 
-    @Override
+    
     public void printDetails() {
 
         super.printDetails();
