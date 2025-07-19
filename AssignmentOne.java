@@ -10,6 +10,10 @@ public class AssignmentOne {
         GeneralPractitioner gp2 = new GeneralPractitioner(102, "Stark", "Neurologist", "7 to 10");
         GeneralPractitioner gp3 = new GeneralPractitioner(103, "Elon", "General Practissionar", "5 to 11");
 
+        // Creating 2 Neurologist objects
+        Neurologist neuro1 = new Neurologist(104, "Abraham", "Neurologist", "Brain");
+        Neurologist neuro2 = new Neurologist(105, "Joseph", "Dermatologist", "Skin");
+
         // Printing details using class methods
         gp1.printDetails();
         System.out.println("--------------------------------");
