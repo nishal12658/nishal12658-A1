@@ -22,5 +22,10 @@ public class AssignmentOne {
         gp3.printDetails();
         System.out.println("--------------------------------");
 
+        neuro1.printDetails();
+        System.out.println("--------------------------------");
+        neuro2.printDetails();
+        System.out.println("--------------------------------");
+
     }
 }
