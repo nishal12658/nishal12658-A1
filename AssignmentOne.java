@@ -49,5 +49,22 @@ public class AssignmentOne {
         System.out.println("Appointment successfully created for " + pName);
     }
 
+    //Method to print existing appointments
+    public static void printExistingAppointments(ArrayList<Appointment> appointments) {
+        if (appointments.isEmpty()) {
+
+            System.out.println("No existing appointments.");
+            return;
+        }
+
+        System.out.println("Existing Appointments:");
+
+        for (int i = 0; i < appointments.size(); i++) {
+            Appointment app = appointments.get(i);
+            System.out.println("--------------------------------");
+            app.printAppointmentDetails();
+        }
+        System.out.println("--------------------------------");
+    }
     
 }
