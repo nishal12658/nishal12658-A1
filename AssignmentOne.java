@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class AssignmentOne {
 
@@ -27,5 +28,26 @@ public class AssignmentOne {
         neuro2.printDetails();
         System.out.println("--------------------------------");
 
+
+        // Part 5 – Collection of appointments
+        ArrayList<Appointment> appointments = new ArrayList<>();
+
+        
     }
+
+    public static void createAppointment(ArrayList<Appointment> appointments,String pName, String phoneNum, String timeSlot, HealthProfessional healthProfessional) {
+
+        if (pName == null || phoneNum == null || timeSlot == null || healthProfessional == null ||
+                pName.isEmpty() || phoneNum.isEmpty() || timeSlot.isEmpty()) {
+
+            System.out.println("Appointment not created. Missing required information.");
+            return;
+        }
+
+        Appointment newAppointment = new Appointment(pName, phoneNum, timeSlot, healthProfessional);
+        appointments.add(newAppointment);
+        System.out.println("Appointment successfully created for " + pName);
+    }
+
+    
 }
