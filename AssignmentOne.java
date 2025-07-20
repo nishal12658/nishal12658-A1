@@ -32,6 +32,11 @@ public class AssignmentOne {
         // Part 5 – Collection of appointments
         ArrayList<Appointment> appointments = new ArrayList<>();
 
+        // Creating 2 GP appointments
+        createAppointment(appointments,"Charlotte", "07 3803 6136", "10:00", gp1);
+        createAppointment(appointments,"Isla", "07 3803 7645", "11:30", gp2);
+
+
         
     }
 
