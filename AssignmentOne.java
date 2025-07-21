@@ -36,7 +36,9 @@ public class AssignmentOne {
         createAppointment(appointments,"Charlotte", "07 3803 6136", "10:00", gp1);
         createAppointment(appointments,"Isla", "07 3803 7645", "11:30", gp2);
 
-
+        // Creating 2 Neurologist appointments
+        createAppointment(appointments,"Amelia", "07 8765 9087", "14:00", neuro1);
+        createAppointment(appointments,"Olivia", "07 3424 6758", "15:30", neuro2);
         
     }
 
