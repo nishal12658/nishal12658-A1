@@ -42,6 +42,12 @@ public class AssignmentOne {
 
         // Print existing appointments
         printExistingAppointments(appointments);
+
+        // Cancel one appointment
+        cancelBooking(appointments,"07 3803 7645");
+
+        // Print existing appointments again
+        printExistingAppointments(appointments);
         
     }
 
