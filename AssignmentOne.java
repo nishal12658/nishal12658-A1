@@ -33,8 +33,8 @@ public class AssignmentOne {
         ArrayList<Appointment> appointments = new ArrayList<>();
 
         // Creating 2 GP appointments
-        createAppointment(appointments,"Charlotte", "07 3803 6136", "10:00", gp1);
-        createAppointment(appointments,"Isla", "07 3803 7645", "11:30", gp2);
+        createAppointment(appointments,"Guptil", "07 3803 6136", "10:00", gp1);
+        createAppointment(appointments,"Bravo", "07 3803 7645", "11:30", gp2);
 
         // Creating 2 Neurologist appointments
         createAppointment(appointments,"Amelia", "07 8765 9087", "14:00", neuro1);
@@ -51,6 +51,43 @@ public class AssignmentOne {
         
     }
 
+    //Method to print existing appointments
+    public static void printExistingAppointments(ArrayList<Appointment> appointments) {
+        if (appointments.isEmpty()) {
+
+            System.out.println("There is no Appointment added yet.");
+            return;
+        }
+
+        System.out.println("Existing Appointments:");
+
+        for (int j = 0; j < appointments.size(); j++) {
+            Appointment app = appointments.get(j);
+            System.out.println("--------------------------------");
+            app.printAppointmentDetails();
+        }
+        System.out.println("--------------------------------");
+    }
+
+    //Method to cancel a booking by mobile number
+    public static void cancelBooking(ArrayList<Appointment> bookings, String mobilePhone) {
+        boolean found = false;
+
+        for (int j = 0; j < bookings.size(); j++) {
+            Appointment app = bookings.get(j);
+            if (app.phoneNum.equals(mobilePhone)) {
+                bookings.remove(j);  // remove by index
+                System.out.println("Appointment against this mobile " + mobilePhone + " has been removed or cancelled.");
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("There is no appointment found against this mobile: " + mobilePhone);
+        }
+    }
+    
     public static void createAppointment(ArrayList<Appointment> appointments,String pName, String phoneNum, String timeSlot, HealthProfessional healthProfessional) {
 
         if (pName == null || phoneNum == null || timeSlot == null || healthProfessional == null ||
@@ -65,40 +102,4 @@ public class AssignmentOne {
         System.out.println("Appointment successfully created for " + pName);
     }
 
-    //Method to print existing appointments
-    public static void printExistingAppointments(ArrayList<Appointment> appointments) {
-        if (appointments.isEmpty()) {
-
-            System.out.println("No existing appointments.");
-            return;
-        }
-
-        System.out.println("Existing Appointments:");
-
-        for (int i = 0; i < appointments.size(); i++) {
-            Appointment app = appointments.get(i);
-            System.out.println("--------------------------------");
-            app.printAppointmentDetails();
-        }
-        System.out.println("--------------------------------");
-    }
-    
-    //Method to cancel a booking by mobile number
-    public static void cancelBooking(ArrayList<Appointment> appointments, String mobilePhone) {
-        boolean found = false;
-
-        for (int i = 0; i < appointments.size(); i++) {
-            Appointment app = appointments.get(i);
-            if (app.phoneNum.equals(mobilePhone)) {
-                appointments.remove(i);  // remove by index
-                System.out.println("Appointment with mobile " + mobilePhone + " has been cancelled.");
-                found = true;
-                break;
-            }
-        }
-
-        if (!found) {
-            System.out.println("No appointment found with mobile: " + mobilePhone);
-        }
-    }
 }
